@@ -1,104 +1,103 @@
-# Cada resultado do traceroute tem uma lista de saltos (hops), onde cada salto tem 3 amostras de Round Trip Time (tentativas). Algumas amostras podem ser "*", o que significa Timeout.
+import json
+import pandas as pd
 
 # A medição chegou ao destino?
 # Se chegou, em qual hop? (número de saltos)
 # Qual foi a latência? RTT do salto
 
-# EXEMPLO:
-
 '''
-hop 1: from=10.0.1.x  -> não é o destino, continua
-hop 2: from=10.0.2.x  -> não é o destino, continua
-...
-hop 8: from=198.51.100.10  -> é o destino! 
-       → num_saltos = 8
-       → latencia = RTT desse hop
-       → chegou_ao_destino = True
+LOOPS: 
+NÍVEL 1: arquivo          →  1 destino + 1 protocolo
+NÍVEL 2: linha            →  1 probe × 1 rodada  
+NÍVEL 3: hop              →  1 roteador no caminho
+NÍVEL 4: amostra          →  1 das 3 tentativas de RTT
 '''
 
-import json
+# Lista dos 6 arquivos de medição (3 destinos × 2 protocolos)
+# Cada entrada tem: nome do destino, família de endereço (4=IPv4, 6=IPv6) e caminho do arquivo
+ARQUIVOS = [
+    {"af": 4, "dst_name": "dazn",   "path": "./medições/ipv4/dazn-RIPE-Atlas-measurement-183792599-1782348180-to-1782434580.json"},
+    {"af": 6, "dst_name": "dazn",   "path": "./medições/ipv6/dazn-RIPE-Atlas-measurement-183792600-1782348180-to-1782434580.json"},
+    {"af": 4, "dst_name": "disney", "path": "./medições/ipv4/disney-RIPE-Atlas-measurement-183792601-1782348180-to-1782434580.json"},
+    {"af": 6, "dst_name": "disney", "path": "./medições/ipv6/disney-RIPE-Atlas-measurement-183792602-1782348180-to-1782434580.json"},
+    {"af": 4, "dst_name": "youtube", "path": "./medições/ipv4/youtube-RIPE-Atlas-measurement-183792597-1782348180-to-1782434580.json"},
+    {"af": 6, "dst_name": "youtube", "path": "./medições/ipv6/youtube-RIPE-Atlas-measurement-183792598-1782348180-to-1782434580.json"},
+]
 
-# ARQUIVO_DADOS = "./dados_ficticios_ripe_atlas/raw_data/measurement_70000001_destino-A_ipv4.json"
-ARQUIVO_DADOS = "./medições/ipv4/dazn-RIPE-Atlas-measurement-183792599-1782348180-to-1782434580.json"
-dados = []
+# Lista para todas as linhas processadas de todos os arquivos
+tabela_final = []
 
-with open(ARQUIVO_DADOS, 'r', encoding='utf-8') as arquivo:
-    for linha in arquivo:
+# Itera sobre cada arquivo
+for arquivo_info in ARQUIVOS:
+    with open(arquivo_info["path"], 'r', encoding='utf-8') as arquivo:
 
-        linha = linha.strip()
+        # Cada linha é um resultado independente (1 linha = 1 probe em 1 rodada específica)
+        for linha in arquivo:
+            linha = linha.strip()
+            if not linha:
+                continue # Ignora linhas vazias
 
-        if linha:
-            dados.append(json.loads(linha))
+            # Converte a linha de texto pra um dicionário
+            resultado = json.loads(linha)
 
-    tabela_final = []
+            # Extrai os metadados 
+            prb_id    = resultado["prb_id"] # ID da probe que gerou o resultado
+            timestamp = resultado["timestamp"] # Quando foi gerado
+            dst_addr  = resultado.get("dst_addr") # IP do destino
+            af        = resultado["af"] # Protocolo: 4 para IPv4 e 6 para IPv6
 
-    # Aqui pega a medição completa pra cada probe 
-    # Exemplo: Probe 1
-    # {"dst_addr", "af": 4, ... , result [  -> usado em for hop in resultado["result"]
-    #                   { "hop": 1,
-    #                     "result": [       -> usado em for amostra in hop["result"]
-    #                                 {"from", "ttl", "size":,"rtt"} #tentativa 1
-    #                                 {"from", "ttl", "size":,"rtt"} #tentativa 2
-    #                                 {"from", "ttl", "size":,"rtt"} #tentativa 2
-    #                               ]
-    #                   }
-    #                   { "hop": X,
-    #                     "result": [
-    #                                 {"from", "ttl", "size":,"rtt"} #tentativa 1
-    #                                 {"from", "ttl", "size":,"rtt"} #tentativa 2
-    #                                 {"from", "ttl", "size":,"rtt"} #tentativa 2
-    #                               ]
-    #                   }
-    #              ]
-    for resultado in dados:
-        prb_id = resultado["prb_id"]
-        timestamp = resultado["timestamp"]
-        dst_addr = resultado.get("dst_addr")
-        af = resultado["af"]
+            # Valores que serão preenchidos ao percorrer os hops
+            chegou_ao_destino = False
+            num_saltos        = None # Quantos hops até chegar ao destino
+            latencia          = None # # RTT mínimo do hop que chegou no destino (pois cada hop tem 3 tentativas)
 
-        chegou_ao_destino = False
-        num_saltos = None
-        latencia = None
+            # Percorre os hops do traceroute em ordem
+            # Cada hop é 1 roteador no caminho até o destino
+            for hop in resultado["result"]:
+                numero_hop = hop.get("hop")
+                if numero_hop is None:
+                    continue # Pula se tiver hop malformado
 
-        # Percorre os hops em ordem, do 1 até o último, para cada probe
-        for hop in resultado["result"]:
-            numero_hop = hop.get("hop")
-            if numero_hop is None:
-                continue
+                # Em cada hop, tem 3 amostras de RTT
+                # Filtra as amostras válidas onde "from" == destino e 
+                rtts_validos = []
+                for amostra in hop["result"]:
+                    if "from" not in amostra: # exclui timeouts (só têm {"x":"*"})
+                        continue
+                    if amostra["from"] == dst_addr and "rtt" in amostra: # Só conta se respondeu o IP destino e exclui amostras sem RTT
+                            rtts_validos.append(amostra["rtt"]) 
 
-            # Dentro de cada hop, são 3 amostras de RTT -> precisa achar a(s) amostra(s) válidas (que não sejam timeout "*") onde "from" seja igual ao destino
-            rtts_validos_do_destino = []
-            for amostra in hop["result"]:
-                if "from" not in amostra:
-                    continue
-                if amostra["from"] == dst_addr:
-                    if "rtt" in amostra:
-                        rtts_validos_do_destino.append(amostra["rtt"])
-
-            if rtts_validos_do_destino:
-                chegou_ao_destino = True
-                if numero_hop == 255:
-                    num_saltos = None
-                else:
-                    num_saltos = numero_hop
+                # Se pelo menos 1 amostra do hop for válida:
+                if rtts_validos:
+                    chegou_ao_destino = True
+                    if numero_hop == 255:
+                        num_saltos = None # O número de saltos fica None porque não representa o caminho real
+                    else:
+                        num_saltos = numero_hop
                     
-                latencia = min(rtts_validos_do_destino)
-                break  # Não precisa olhar os hops seguintes
+                    # Usa o menor RTT entre as amostras válidas como latência
+                    latencia   = min(rtts_validos)
 
-        # Salva a linha mesmo se não chegou, para calcular a taxa de falha depois
-        tabela_final.append({
-            "prb_id": prb_id,
-            "timestamp": timestamp,
-            "dst_addr": dst_addr,
-            "af": af,
-            "chegou_ao_destino": chegou_ao_destino,
-            "num_saltos": num_saltos,
-            "latencia_ms": latencia,
-        })
+                    # Como já achou o destino, não precisa olhar os próximos hops
+                    break
 
-print(f"Total de linhas processadas: {len(tabela_final)}")
-print(f"Exemplo da primeira linha: {tabela_final[0]}")
+            # Salva a linha (Probe X Rodada) mesmo se não chegou, para calcular a taxa de falha depois
+            tabela_final.append({
+                "dst_name":          arquivo_info["dst_name"], # dazn, disney, youtube
+                "prb_id":            prb_id,
+                "timestamp":         timestamp,
+                "dst_addr":          dst_addr,
+                "af":                af,
+                "chegou_ao_destino": chegou_ao_destino,
+                "num_saltos":        num_saltos,
+                "latencia_ms":       latencia,
+            })
 
-    
+# Converte a lista de dicionários em DataFrame para facilitar análises e gráficos
+df = pd.DataFrame(tabela_final)
 
-
+# Verificação de sanidade: conta resultados por destino e protocolo
+# Esperado: ~1125 por combinação (45 probes × 25 rodadas)
+# Valores muito menores indicam arquivo incompleto ou probes offline
+print(f"Total de resultados: {len(df)} \n")
+print(df.groupby(["dst_name", "af"])[["chegou_ao_destino"]].count())
