@@ -32,14 +32,18 @@ Para cada hop, o traceroute manda 3 pacotes de teste e mede o tempo de resposta 
 
 - O número de saltos é simplesmente quantos hops existem no array result até bater no destino.
 
-### No total:
-45 probes (fixas, todos os continentes), disparando 25 vezes (a cada 60 minutos durante 24h)
-        │
-        ├──► disparam traceroute para Destino 1 (IPv4) → 1125 resultados 
-        ├──► disparam traceroute para Destino 1 (IPv6) → 1125 resultados
-        ├──► disparam traceroute para Destino 2 (IPv4) → 1125 resultados
-        ├──► disparam traceroute para Destino 2 (IPv6) → 1125 resultados
-        ├──► disparam traceroute para Destino 3 (IPv4) → 1125 resultados
-        └──► disparam traceroute para Destino 3 (IPv6) → 1125 resultados
-                                                        ───────────────────
-                                                        Total: 6.750 resultados
+### No total
+
+45 probes (fixas, distribuídas por todos os continentes), disparando 25 vezes
+(a cada 60 minutos durante 24h)
+
+```text
+├──► Destino 1 (IPv4) → 1.125 resultados
+├──► Destino 1 (IPv6) → 1.125 resultados
+├──► Destino 2 (IPv4) → 1.125 resultados
+├──► Destino 2 (IPv6) → 1.125 resultados
+├──► Destino 3 (IPv4) → 1.125 resultados
+└──► Destino 3 (IPv6) → 1.125 resultados
+                        ───────────────────────
+                        Total: 6.750 resultados
+```
