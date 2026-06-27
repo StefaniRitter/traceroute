@@ -1,0 +1,362 @@
+[
+  {
+    "prb_id": 10000,
+    "country_code": "BR",
+    "country": "Brazil",
+    "continent": "South America",
+    "asn_v4": 42905,
+    "asn_v6": 8296
+  },
+  {
+    "prb_id": 10001,
+    "country_code": "BR",
+    "country": "Brazil",
+    "continent": "South America",
+    "asn_v4": 2639,
+    "asn_v6": 49598
+  },
+  {
+    "prb_id": 10002,
+    "country_code": "BR",
+    "country": "Brazil",
+    "continent": "South America",
+    "asn_v4": 19024,
+    "asn_v6": 17049
+  },
+  {
+    "prb_id": 10003,
+    "country_code": "AR",
+    "country": "Argentina",
+    "continent": "South America",
+    "asn_v4": 15628,
+    "asn_v6": 10144
+  },
+  {
+    "prb_id": 10004,
+    "country_code": "AR",
+    "country": "Argentina",
+    "continent": "South America",
+    "asn_v4": 49265,
+    "asn_v6": 7717
+  },
+  {
+    "prb_id": 10005,
+    "country_code": "AR",
+    "country": "Argentina",
+    "continent": "South America",
+    "asn_v4": 45348,
+    "asn_v6": 49540
+  },
+  {
+    "prb_id": 10006,
+    "country_code": "CH",
+    "country": "Chile",
+    "continent": "South America",
+    "asn_v4": 59469,
+    "asn_v6": 36741
+  },
+  {
+    "prb_id": 10007,
+    "country_code": "CH",
+    "country": "Chile",
+    "continent": "South America",
+    "asn_v4": 6697,
+    "asn_v6": 39698
+  },
+  {
+    "prb_id": 10008,
+    "country_code": "CH",
+    "country": "Chile",
+    "continent": "South America",
+    "asn_v4": 28651,
+    "asn_v6": 3082
+  },
+  {
+    "prb_id": 10009,
+    "country_code": "UN",
+    "country": "United States",
+    "continent": "North America",
+    "asn_v4": 2952,
+    "asn_v6": 7140
+  },
+  {
+    "prb_id": 10010,
+    "country_code": "UN",
+    "country": "United States",
+    "continent": "North America",
+    "asn_v4": 15328,
+    "asn_v6": 16247
+  },
+  {
+    "prb_id": 10011,
+    "country_code": "UN",
+    "country": "United States",
+    "continent": "North America",
+    "asn_v4": 34118,
+    "asn_v6": 40453
+  },
+  {
+    "prb_id": 10012,
+    "country_code": "CA",
+    "country": "Canada",
+    "continent": "North America",
+    "asn_v4": 2739,
+    "asn_v6": 37781
+  },
+  {
+    "prb_id": 10013,
+    "country_code": "CA",
+    "country": "Canada",
+    "continent": "North America",
+    "asn_v4": 14031,
+    "asn_v6": 47925
+  },
+  {
+    "prb_id": 10014,
+    "country_code": "CA",
+    "country": "Canada",
+    "continent": "North America",
+    "asn_v4": 43590,
+    "asn_v6": 46962
+  },
+  {
+    "prb_id": 10015,
+    "country_code": "ME",
+    "country": "Mexico",
+    "continent": "North America",
+    "asn_v4": 36713,
+    "asn_v6": 28493
+  },
+  {
+    "prb_id": 10016,
+    "country_code": "ME",
+    "country": "Mexico",
+    "continent": "North America",
+    "asn_v4": 15446,
+    "asn_v6": 30439
+  },
+  {
+    "prb_id": 10017,
+    "country_code": "ME",
+    "country": "Mexico",
+    "continent": "North America",
+    "asn_v4": 39618,
+    "asn_v6": 19231
+  },
+  {
+    "prb_id": 10018,
+    "country_code": "GE",
+    "country": "Germany",
+    "continent": "Europe",
+    "asn_v4": 54046,
+    "asn_v6": 57970
+  },
+  {
+    "prb_id": 10019,
+    "country_code": "GE",
+    "country": "Germany",
+    "continent": "Europe",
+    "asn_v4": 1425,
+    "asn_v6": 50729
+  },
+  {
+    "prb_id": 10020,
+    "country_code": "GE",
+    "country": "Germany",
+    "continent": "Europe",
+    "asn_v4": 53810,
+    "asn_v6": 11463
+  },
+  {
+    "prb_id": 10021,
+    "country_code": "FR",
+    "country": "France",
+    "continent": "Europe",
+    "asn_v4": 46753,
+    "asn_v6": 28696
+  },
+  {
+    "prb_id": 10022,
+    "country_code": "FR",
+    "country": "France",
+    "continent": "Europe",
+    "asn_v4": 23298,
+    "asn_v6": 19210
+  },
+  {
+    "prb_id": 10023,
+    "country_code": "FR",
+    "country": "France",
+    "continent": "Europe",
+    "asn_v4": 11189,
+    "asn_v6": 15110
+  },
+  {
+    "prb_id": 10024,
+    "country_code": "PO",
+    "country": "Portugal",
+    "continent": "Europe",
+    "asn_v4": 63731,
+    "asn_v6": 51036
+  },
+  {
+    "prb_id": 10025,
+    "country_code": "PO",
+    "country": "Portugal",
+    "continent": "Europe",
+    "asn_v4": 23059,
+    "asn_v6": 7698
+  },
+  {
+    "prb_id": 10026,
+    "country_code": "PO",
+    "country": "Portugal",
+    "continent": "Europe",
+    "asn_v4": 7078,
+    "asn_v6": 25898
+  },
+  {
+    "prb_id": 10027,
+    "country_code": "JA",
+    "country": "Japan",
+    "continent": "Asia",
+    "asn_v4": 7338,
+    "asn_v6": 24526
+  },
+  {
+    "prb_id": 10028,
+    "country_code": "JA",
+    "country": "Japan",
+    "continent": "Asia",
+    "asn_v4": 56541,
+    "asn_v6": 23541
+  },
+  {
+    "prb_id": 10029,
+    "country_code": "JA",
+    "country": "Japan",
+    "continent": "Asia",
+    "asn_v4": 40565,
+    "asn_v6": 18335
+  },
+  {
+    "prb_id": 10030,
+    "country_code": "IN",
+    "country": "India",
+    "continent": "Asia",
+    "asn_v4": 53895,
+    "asn_v6": 3847
+  },
+  {
+    "prb_id": 10031,
+    "country_code": "IN",
+    "country": "India",
+    "continent": "Asia",
+    "asn_v4": 48823,
+    "asn_v6": 31108
+  },
+  {
+    "prb_id": 10032,
+    "country_code": "IN",
+    "country": "India",
+    "continent": "Asia",
+    "asn_v4": 36142,
+    "asn_v6": 9180
+  },
+  {
+    "prb_id": 10033,
+    "country_code": "SO",
+    "country": "South Korea",
+    "continent": "Asia",
+    "asn_v4": 64774,
+    "asn_v6": 61443
+  },
+  {
+    "prb_id": 10034,
+    "country_code": "SO",
+    "country": "South Korea",
+    "continent": "Asia",
+    "asn_v4": 25807,
+    "asn_v6": 6164
+  },
+  {
+    "prb_id": 10035,
+    "country_code": "SO",
+    "country": "South Korea",
+    "continent": "Asia",
+    "asn_v4": 37178,
+    "asn_v6": 20213
+  },
+  {
+    "prb_id": 10036,
+    "country_code": "SO",
+    "country": "South Africa",
+    "continent": "Africa",
+    "asn_v4": 55355,
+    "asn_v6": 42198
+  },
+  {
+    "prb_id": 10037,
+    "country_code": "SO",
+    "country": "South Africa",
+    "continent": "Africa",
+    "asn_v4": 41535,
+    "asn_v6": 59028
+  },
+  {
+    "prb_id": 10038,
+    "country_code": "SO",
+    "country": "South Africa",
+    "continent": "Africa",
+    "asn_v4": 57472,
+    "asn_v6": 24700
+  },
+  {
+    "prb_id": 10039,
+    "country_code": "KE",
+    "country": "Kenya",
+    "continent": "Africa",
+    "asn_v4": 38837,
+    "asn_v6": 13601
+  },
+  {
+    "prb_id": 10040,
+    "country_code": "KE",
+    "country": "Kenya",
+    "continent": "Africa",
+    "asn_v4": 47174,
+    "asn_v6": 5558
+  },
+  {
+    "prb_id": 10041,
+    "country_code": "KE",
+    "country": "Kenya",
+    "continent": "Africa",
+    "asn_v4": 4003,
+    "asn_v6": 44336
+  },
+  {
+    "prb_id": 10042,
+    "country_code": "EG",
+    "country": "Egypt",
+    "continent": "Africa",
+    "asn_v4": 15935,
+    "asn_v6": 51663
+  },
+  {
+    "prb_id": 10043,
+    "country_code": "EG",
+    "country": "Egypt",
+    "continent": "Africa",
+    "asn_v4": 19965,
+    "asn_v6": 6229
+  },
+  {
+    "prb_id": 10044,
+    "country_code": "EG",
+    "country": "Egypt",
+    "continent": "Africa",
+    "asn_v4": 57054,
+    "asn_v6": 16256
+  }
+]

@@ -1,0 +1,44 @@
+[
+  {
+    "msm_id": 70000001,
+    "destino": "destino-A",
+    "af": 4,
+    "arquivo": "raw_data/measurement_70000001_destino-A_ipv4.json",
+    "n_resultados": 1125
+  },
+  {
+    "msm_id": 70000002,
+    "destino": "destino-A",
+    "af": 6,
+    "arquivo": "raw_data/measurement_70000002_destino-A_ipv6.json",
+    "n_resultados": 1125
+  },
+  {
+    "msm_id": 70000003,
+    "destino": "destino-B",
+    "af": 4,
+    "arquivo": "raw_data/measurement_70000003_destino-B_ipv4.json",
+    "n_resultados": 1125
+  },
+  {
+    "msm_id": 70000004,
+    "destino": "destino-B",
+    "af": 6,
+    "arquivo": "raw_data/measurement_70000004_destino-B_ipv6.json",
+    "n_resultados": 1125
+  },
+  {
+    "msm_id": 70000005,
+    "destino": "destino-C",
+    "af": 4,
+    "arquivo": "raw_data/measurement_70000005_destino-C_ipv4.json",
+    "n_resultados": 1125
+  },
+  {
+    "msm_id": 70000006,
+    "destino": "destino-C",
+    "af": 6,
+    "arquivo": "raw_data/measurement_70000006_destino-C_ipv6.json",
+    "n_resultados": 1125
+  }
+]
