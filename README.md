@@ -6,7 +6,7 @@
 É o aparelho físico (ou virtual) num lugar específico do mundo. Cada probe tem um ID único (prb_id) e metadados associados: em que país está, em que continente, qual a rede/provedor (ASN) dela, etc.
 
 ### Measurement (medição)
-Traceroute IPv4 pro destino X, repitetido a cada 60 minutos, durante 24 horas, usando 45 probes" = UM measurement.
+Traceroute IPv4 pro destino X, repetido a cada 60 minutos, durante 24 horas, usando 45 probes" = UM measurement.
 Para 3 destinos × 2 famílias (IPv4 e IPv6), 6 measurements no total (um pra cada combinação destino+família).
 
 ### Measurement ID (msm_id)
