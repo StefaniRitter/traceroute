@@ -1,0 +1,122 @@
+[
+  {
+    "prb_id": 1001398,
+    "country_code": "AR",
+    "asn_v4": 28109,
+    "asn_v6": 28109
+  },
+  {
+    "prb_id": 1003469,
+    "country_code": "EG",
+    "asn_v4": 8452,
+    "asn_v6": 207740
+  },
+  {
+    "prb_id": 1009606,
+    "country_code": "CA",
+    "asn_v4": 14593,
+    "asn_v6": 14593
+  },
+  {
+    "prb_id": 1009618,
+    "country_code": "GT",
+    "asn_v4": 14754,
+    "asn_v6": 14754
+  },
+  {
+    "prb_id": 1009825,
+    "country_code": "US",
+    "asn_v4": 7922,
+    "asn_v6": 7922
+  },
+  {
+    "prb_id": 1010221,
+    "country_code": "DE",
+    "asn_v4": 3320,
+    "asn_v6": 3320
+  },
+  {
+    "prb_id": 1014250,
+    "country_code": "SG",
+    "asn_v4": 55430,
+    "asn_v6": null
+  },
+  {
+    "prb_id": 1015512,
+    "country_code": "DE",
+    "asn_v4": 48596,
+    "asn_v6": 48596
+  },
+  {
+    "prb_id": 1015514,
+    "country_code": "BR",
+    "asn_v4": 396509,
+    "asn_v6": null
+  },
+  {
+    "prb_id": 1015709,
+    "country_code": "JP",
+    "asn_v4": 4713,
+    "asn_v6": 4713
+  },
+  {
+    "prb_id": 1015907,
+    "country_code": "ZA",
+    "asn_v4": 20011,
+    "asn_v6": 20011
+  },
+  {
+    "prb_id": 1016273,
+    "country_code": "SG",
+    "asn_v4": 14061,
+    "asn_v6": 14061
+  },
+  {
+    "prb_id": 12383,
+    "country_code": "CA",
+    "asn_v4": 395611,
+    "asn_v6": 395611
+  },
+  {
+    "prb_id": 28296,
+    "country_code": "DE",
+    "asn_v4": 3320,
+    "asn_v6": 3320
+  },
+  {
+    "prb_id": 32670,
+    "country_code": "BR",
+    "asn_v4": 28573,
+    "asn_v6": 28573
+  },
+  {
+    "prb_id": 33355,
+    "country_code": "CA",
+    "asn_v4": 852,
+    "asn_v6": 852
+  },
+  {
+    "prb_id": 60496,
+    "country_code": "BR",
+    "asn_v4": 269014,
+    "asn_v6": 269014
+  },
+  {
+    "prb_id": 61129,
+    "country_code": "EG",
+    "asn_v4": 8452,
+    "asn_v6": 207740
+  },
+  {
+    "prb_id": 64976,
+    "country_code": "NG",
+    "asn_v4": 328585,
+    "asn_v6": 328585
+  },
+  {
+    "prb_id": 7367,
+    "country_code": "CL",
+    "asn_v4": 64112,
+    "asn_v6": 64112
+  }
+]
