@@ -96,6 +96,10 @@ for arquivo_info in ARQUIVOS:
 # Converte a lista de dicionários em DataFrame para facilitar análises e gráficos
 df = pd.DataFrame(tabela_final)
 
+# Salva o DataFrame em CSV
+df.to_csv("resultados-processados_traceroute.csv", index=False, encoding="utf-8")
+print("CSV salvo")
+
 # Verificação de sanidade: conta resultados por destino e protocolo
 # Esperado: ~1125 por combinação (45 probes × 25 rodadas)
 # Valores muito menores indicam arquivo incompleto ou probes offline
