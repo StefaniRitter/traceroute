@@ -16,12 +16,12 @@ NÍVEL 4: amostra          →  1 das 3 tentativas de RTT
 # Lista dos 6 arquivos de medição (3 destinos × 2 protocolos)
 # Cada entrada tem: nome do destino, família de endereço (4=IPv4, 6=IPv6) e caminho do arquivo
 ARQUIVOS = [
-    {"af": 4, "dst_name": "dazn",   "path": "./medições/ipv4/dazn-RIPE-Atlas-measurement-183792599-1782348180-to-1782434580.json"},
-    {"af": 6, "dst_name": "dazn",   "path": "./medições/ipv6/dazn-RIPE-Atlas-measurement-183792600-1782348180-to-1782434580.json"},
-    {"af": 4, "dst_name": "disney", "path": "./medições/ipv4/disney-RIPE-Atlas-measurement-183792601-1782348180-to-1782434580.json"},
-    {"af": 6, "dst_name": "disney", "path": "./medições/ipv6/disney-RIPE-Atlas-measurement-183792602-1782348180-to-1782434580.json"},
-    {"af": 4, "dst_name": "youtube", "path": "./medições/ipv4/youtube-RIPE-Atlas-measurement-183792597-1782348180-to-1782434580.json"},
-    {"af": 6, "dst_name": "youtube", "path": "./medições/ipv6/youtube-RIPE-Atlas-measurement-183792598-1782348180-to-1782434580.json"},
+    {"af": 4, "dst_name": "dazn",  "path": "medições 24-06\ipv4\dazn-4-RIPE-Atlas-measurement-183792599-1782331200-to-1782424800.json"},
+    {"af": 6, "dst_name": "dazn",   "path": "medições 24-06\ipv6\dazn-6-RIPE-Atlas-measurement-183792600-1782331200-to-1782424800.json"},
+    {"af": 4, "dst_name": "disney", "path": "medições 24-06\ipv4\disney-4-RIPE-Atlas-measurement-183792601-1782331200-to-1782424800.json"},
+    {"af": 6, "dst_name": "disney", "path": "medições 24-06\ipv6\disney-6-RIPE-Atlas-measurement-183792602-1782331200-to-1782424800.json"},
+    {"af": 4, "dst_name": "youtube", "path": "medições 24-06\ipv4\youtube-4-RIPE-Atlas-measurement-183792597-1782331200-to-1782424800.json"},
+    {"af": 6, "dst_name": "youtube", "path": "medições 24-06\ipv6\youtube-6-RIPE-Atlas-measurement-183792598-1782331200-to-1782424800.json"},
 ]
 
 # Lista para todas as linhas processadas de todos os arquivos

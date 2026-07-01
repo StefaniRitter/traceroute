@@ -30,15 +30,18 @@ CODE_TO_INFO = {
     "US": ("United States", "North America"),
     "CA": ("Canada", "North America"),
     "MX": ("Mexico", "North America"),
+    "GT": ("Guatemala", "North America"),
     "DE": ("Germany", "Europe"),
     "FR": ("France", "Europe"),
     "PT": ("Portugal", "Europe"),
     "JP": ("Japan", "Asia"),
     "IN": ("India", "Asia"),
+    "SG": ("Singapore", "Asia"),
     "KR": ("South Korea", "Asia"),
     "ZA": ("South Africa", "Africa"),
     "KE": ("Kenya", "Africa"),
     "EG": ("Egypt", "Africa"),
+    "NG": ("Nigeria", "Africa"),
 }
 
 df["country"] = df["country_code"].map(lambda x: CODE_TO_INFO.get(x, ("Unknown", "Unknown"))[0])
